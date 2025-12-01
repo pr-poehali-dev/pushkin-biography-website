@@ -42,7 +42,8 @@ const Index = () => {
         'Воспитывался французскими гувернерами',
         'Няня Арина Родионовна рассказывала русские сказки',
         'Рано проявил интерес к поэзии'
-      ]
+      ],
+      fullText: 'Александр Пушкин родился 6 июня 1799 года в Москве, в дворянской семье, где любили литературу и образование. Детство его прошло в среде, наполненной разговорами о книгах, театре и поэзии. Большое влияние на будущего поэта оказала няня Арина Родионовна, рассказывавшая ему народные сказки и предания. Уже в раннем возрасте Пушкин много читал и начал пробовать писать стихи, развивая литературный вкус и интерес к словесности.'
     },
     {
       title: 'Лицейский период',
@@ -55,7 +56,8 @@ const Index = () => {
         'Первая публикация в журнале "Вестник Европы"',
         'Познакомился с Дельвигом и Кюхельбекером',
         'Написал "Воспоминания в Царском Селе"'
-      ]
+      ],
+      fullText: '19 октября 1811 года Пушкина приняли в Императорский Царскосельский лицей, ставший решающим этапом его формирования. Здесь он получил широкое образование и оказался в среде, вдохновлявшей творчество. Пушкин активно писал стихи, участвовал в литературных вечерах, а в 1815 году его талант был замечен Державиным. В Лицее у него появились близкие друзья — Пущин, Дельвиг, Кюхельбекер, — образовавшие «лицейское братство».'
     },
     {
       title: 'Петербургский период',
@@ -68,7 +70,8 @@ const Index = () => {
         'Вступил в литературное общество "Арзамас"',
         'Написал оду "Вольность"',
         'Закончил поэму "Руслан и Людмила"'
-      ]
+      ],
+      fullText: 'После окончания Лицея Пушкин был назначен на службу в Коллегию иностранных дел и оказался в центре культурной жизни Петербурга. В эти годы он активно посещал литературные общества и создавал сатирические стихотворения, наполненные гражданскими мотивами. Его поэма «Руслан и Людмила» принесла ему широкую известность. Однако резкие политические высказывания привели к недовольству властей и последующей ссылке.'
     },
     {
       title: 'Южная ссылка',
@@ -81,7 +84,8 @@ const Index = () => {
         'Посетил Кавказ, Крым, Кишинев, Одессу',
         'Написал "Кавказский пленник"',
         'Начал работу над "Евгением Онегиным"'
-      ]
+      ],
+      fullText: 'За вольнолюбивые стихи Пушкина отправили сначала в Екатеринослав, затем в Кишинёв и Одессу. Южная природа, новые впечатления и свобода от столичной рутины вдохновили его на создание ярких романтических произведений — «Кавказский пленник», «Бахчисарайский фонтан». Этот период стал важным этапом становления Пушкина как крупного поэта-романтика, но сопровождался конфликтами с начальством и надзором властей.'
     },
     {
       title: 'Михайловское. Болдино',
@@ -94,7 +98,8 @@ const Index = () => {
         'Болдинская осень 1830 - 50+ произведений',
         'Написал "Бориса Годунова"',
         'Завершил "Евгения Онегина"'
-      ]
+      ],
+      fullText: 'В 1824 году Пушкина сослали в Михайловское, где он оказался в уединении, но именно здесь создал множество ключевых произведений: главы «Евгения Онегина», «Борис Годунов», лирику 1820-х годов. Позже, в 1830 году, в период так называемой «Болдинской осени», Пушкин пережил невероятный творческий подъём, написав сразу целый ряд выдающихся произведений — «Повести покойного Ивана Петровича Белкина», «Маленькие трагедии», стихотворения и статьи.'
     },
     {
       title: 'Последние годы',
@@ -107,7 +112,8 @@ const Index = () => {
         'Получил звание камер-юнкера',
         'Написал "Капитанскую дочку"',
         'Погиб на дуэли 10 февраля 1837 года'
-      ]
+      ],
+      fullText: 'После женитьбы на Наталье Гончаровой Пушкин поселился в Петербурге и активно работал над прозой, историческими исследованиями и стихами. Он вступил на службу в качестве историографа и придворного чиновника, но сталкивался с финансовыми трудностями и придворными конфликтами. Несмотря на сложные обстоятельства, поэт создал «Капитанскую дочку», «Медного всадника» и множество лирических стихотворений. 27 января 1837 года он был смертельно ранен на дуэли и скончался 29 января.'
     }
   ];
 
@@ -238,47 +244,90 @@ const Index = () => {
             <TabsContent value="biography" className="space-y-8">
               <div className="grid gap-8">
                 {lifePeriods.map((period, index) => (
-                  <div
-                    key={index}
-                    data-index={index}
-                    className={`timeline-section transition-all duration-700 ${
-                      visibleSections.includes(index)
-                        ? 'opacity-100 translate-y-0'
-                        : 'opacity-0 translate-y-10'
-                    }`}
-                  >
-                    <Card className={`relative overflow-hidden bg-gradient-to-br ${period.color} border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20`}>
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl" />
-                      <CardHeader>
-                        <div className="flex items-start gap-4">
-                          <div className="p-3 bg-primary/20 rounded-lg">
-                            <Icon name={period.icon as any} size={32} className="text-primary" />
-                          </div>
-                          <div className="flex-1">
-                            <div className="flex items-center gap-3 mb-2">
-                              <CardTitle className="text-3xl">{period.title}</CardTitle>
-                              <Badge variant="secondary" className="text-sm">
-                                {period.years}
-                              </Badge>
+                  <Dialog key={index}>
+                    <DialogTrigger asChild>
+                      <div
+                        data-index={index}
+                        className={`timeline-section transition-all duration-700 cursor-pointer ${
+                          visibleSections.includes(index)
+                            ? 'opacity-100 translate-y-0'
+                            : 'opacity-0 translate-y-10'
+                        }`}
+                      >
+                        <Card className={`relative overflow-hidden bg-gradient-to-br ${period.color} border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20`}>
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl" />
+                          <CardHeader>
+                            <div className="flex items-start gap-4">
+                              <div className="p-3 bg-primary/20 rounded-lg">
+                                <Icon name={period.icon as any} size={32} className="text-primary" />
+                              </div>
+                              <div className="flex-1">
+                                <div className="flex items-center gap-3 mb-2">
+                                  <CardTitle className="text-3xl">{period.title}</CardTitle>
+                                  <Badge variant="secondary" className="text-sm">
+                                    {period.years}
+                                  </Badge>
+                                </div>
+                                <CardDescription className="text-base">
+                                  {period.description}
+                                </CardDescription>
+                              </div>
                             </div>
-                            <CardDescription className="text-base">
-                              {period.description}
-                            </CardDescription>
+                          </CardHeader>
+                          <CardContent>
+                            <ul className="space-y-2 mb-4">
+                              {period.facts.map((fact, idx) => (
+                                <li key={idx} className="flex items-start gap-2">
+                                  <Icon name="Sparkles" size={16} className="text-primary mt-1 flex-shrink-0" />
+                                  <span className="text-sm">{fact}</span>
+                                </li>
+                              ))}
+                            </ul>
+                            <Button variant="outline" className="w-full group">
+                              <span>Подробнее</span>
+                              <Icon name="ChevronRight" size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                            </Button>
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
+                      <DialogHeader>
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="p-2 bg-primary/20 rounded-lg">
+                            <Icon name={period.icon as any} size={28} className="text-primary" />
+                          </div>
+                          <div>
+                            <DialogTitle className="text-3xl">{period.title}</DialogTitle>
+                            <Badge variant="secondary" className="mt-2">
+                              {period.years}
+                            </Badge>
                           </div>
                         </div>
-                      </CardHeader>
-                      <CardContent>
-                        <ul className="space-y-2">
-                          {period.facts.map((fact, idx) => (
-                            <li key={idx} className="flex items-start gap-2">
-                              <Icon name="Sparkles" size={16} className="text-primary mt-1 flex-shrink-0" />
-                              <span className="text-sm">{fact}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </CardContent>
-                    </Card>
-                  </div>
+                      </DialogHeader>
+                      <div className="space-y-6 mt-4">
+                        <div className="prose prose-invert max-w-none">
+                          <p className="text-base leading-relaxed text-foreground/90">
+                            {period.fullText}
+                          </p>
+                        </div>
+                        <div className="border-t border-border pt-4">
+                          <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                            <Icon name="Star" size={20} className="text-primary" />
+                            Ключевые факты
+                          </h4>
+                          <ul className="space-y-2">
+                            {period.facts.map((fact, idx) => (
+                              <li key={idx} className="flex items-start gap-2">
+                                <Icon name="Check" size={16} className="text-primary mt-1 flex-shrink-0" />
+                                <span className="text-sm">{fact}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 ))}
               </div>
             </TabsContent>
